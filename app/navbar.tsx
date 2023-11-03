@@ -1,15 +1,16 @@
 'use client';
 
-import { Fragment } from 'react';
-import { usePathname } from 'next/navigation';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { signIn, signOut } from 'next-auth/react';
+
+import { Fragment } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const navigation = [
   { name: 'Dashboard', href: '/' },
-  { name: 'Playground', href: '/playground' }
+  // { name: 'Playground', href: '/playground' }
 ];
 
 function classNames(...classes: string[]) {
@@ -71,10 +72,12 @@ export default function Navbar({ user }: { user: any }) {
                 <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
-                      <span className="sr-only">Open user menu</span>
+                      {/* <span className="sr-only">Open user menu</span> */}
+                      
                       <Image
                         className="h-8 w-8 rounded-full"
-                        src={user?.image || 'https://avatar.vercel.sh/leerob'}
+                        // src={user?.image || 'https://avatar.vercel.sh/leerob'}
+                        src={'https://avatar.vercel.sh/leerob'}
                         height={32}
                         width={32}
                         alt={`${user?.name || 'placeholder'} avatar`}
@@ -163,15 +166,18 @@ export default function Navbar({ user }: { user: any }) {
                     <div className="flex-shrink-0">
                       <Image
                         className="h-8 w-8 rounded-full"
-                        src={user.image}
+                        // src={user.image}
+                        src={'https://avatar.vercel.sh/leerob'}
                         height={32}
                         width={32}
                         alt={`${user.name} avatar`}
                       />
+                      <p>{user.name}</p>
                     </div>
                     <div className="ml-3">
                       <div className="text-base font-medium text-gray-800">
-                        {user.name}
+                        {/* {user.name} */}
+                        {/* {'placeholder'} */}
                       </div>
                       <div className="text-sm font-medium text-gray-500">
                         {user.email}
@@ -190,7 +196,7 @@ export default function Navbar({ user }: { user: any }) {
               ) : (
                 <div className="mt-3 space-y-1">
                   <button
-                    onClick={() => signIn('github')}
+                    onClick={() => signIn('strava')}
                     className="flex w-full px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
                   >
                     Sign in

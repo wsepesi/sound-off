@@ -8,10 +8,10 @@ export const {
   providers: [
     StravaProvider({
       clientId: process.env.STRAVA_CLIENT_ID as string,
-      clientSecret: process.env.STRAVA_CLIENT_SECRET as string
+      clientSecret: process.env.STRAVA_CLIENT_SECRET as string,
     })
   ],
-  pages: {
-    signIn: '/sign-in'
-  }
+  // pages: {
+  //   signIn: '/sign-in'
+  // }
 });
