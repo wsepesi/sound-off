@@ -43,13 +43,6 @@ export default async function IndexPage({
           {session?.user &&
             <div>
               <Submit session={session} />
-              {/* <Button onClick={async () => {
-                const result = await sql`
-                  SELECT id, name, time 
-                  FROM users;
-                `;
-                let users = result.rows as User[];
-              }}>Refresh</Button> */}
             </div>
           }
         </div>
