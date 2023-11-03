@@ -47,7 +47,10 @@ export default function UsersTable({ users }: { users: User[] }) {
         </TableRow>
       </TableHead>
       <TableBody>
-        {users.map((user) => (
+        {users.sort(
+          // sort by newest time
+          (a, b) => b.time.getTime() - a.time.getTime()
+        ).map((user) => (
           <TableRow key={user.id}>
             <TableCell>{user.name}</TableCell>
             <TableCell>

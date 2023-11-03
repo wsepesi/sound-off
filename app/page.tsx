@@ -28,17 +28,6 @@ export default async function IndexPage({
 }: {
   searchParams: { q: string };
 }) {
-  const search = searchParams.q ?? '';
-  // const result = await sql`
-  //   SELECT /*+ NOCACHE */ id, name, time
-  //   FROM users 
-  //   WHERE name ILIKE ${'%' + search + '%'};
-  // `;
-  // const result = await sql`
-  //   SELECT id, name, time 
-  //   FROM users;
-  // `;
-  // const result = await sql`SELECT * FROM users;`
   const result = await getData()
   let users = result.rows as User[];
 
