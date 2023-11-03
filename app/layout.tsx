@@ -7,9 +7,9 @@ import { Suspense } from 'react';
 import Toast from './toast';
 
 export const metadata = {
-  title: 'Next.js App Router + NextAuth + Tailwind CSS',
+  title: 'SOUND OFF',
   description:
-    'A user admin dashboard configured with Next.js, Postgres, NextAuth, Tailwind CSS, TypeScript, ESLint, and Prettier.'
+    '#YUP'
 };
 
 export default function RootLayout({
