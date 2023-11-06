@@ -35,5 +35,24 @@ export async function POST(req: Request) {
         WHERE name = ${name};
         `;
     }
+
+
+    // data log table
+    // first get id of user
+    const result2 = await sql`
+        SELECT id
+        FROM users
+        WHERE name = ${name};
+    `;
+
+    const rows2 = result2.rows as User[];
+    const id = rows2[0].id;
+
+    // now insert into data log table
+    const res2 = await sql`
+        INSERT INTO data (user_id, time)
+        VALUES (${id}, NOW());
+    `;
+
     return NextResponse.json({ success: result, data: await sql`SELECT * from USERS;` })
 }

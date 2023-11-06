@@ -1,13 +1,8 @@
-import { Button, Card } from '@tremor/react';
-import { db, sql } from '@vercel/postgres';
-
+import { Card } from '@tremor/react';
 import { Submit } from './submit';
 import UsersTable from './table';
 import { auth } from './auth';
-import { get } from 'http';
-
-// import { useState } from 'react';
-// import { useEffect } from 'react';
+import { db } from '@vercel/postgres';
 
 interface User {
   id: number;
